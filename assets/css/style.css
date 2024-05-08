@@ -1,0 +1,72 @@
+/* Author = Okoth Jeconia Auma */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+}
+
+.sidenav {
+    width: 20%;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    background-color: #0d001a;
+    margin: 0;
+}
+
+.sidenav .card {
+    border: none;
+}
+
+.sidenav .card ul li {
+    background-color: #0d001a;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    transition: all .5s ease-in-out;
+}
+
+.sidenav .card ul li:hover {
+    background-color: #000;
+    color: #f2e6ff;
+    text-transform: capitalize;
+}
+
+.sidenav .card ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.container {
+    width: 80%;
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid green;
+}
+
+.content {
+    padding: 12px;
+}
+
+.form-hide {
+    display: none;
+}
+
+.form-hide.active {
+    display: block;
+}
+
+h4 {
+    text-align: center;
+}
