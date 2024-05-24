@@ -1,6 +1,6 @@
 <?php
     define("SERVERNAME", "localhost");
-    define('USERNAME', 'jeconia');
-    define('PASSWORD', 'okothauma3010');
+    define('USERNAME', 'root');
+    define('PASSWORD', '');
     define('DB', 'newsletter');
 ?>

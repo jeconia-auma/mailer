@@ -1,4 +1,7 @@
-<?php require_once('partials/header.php'); ?>
+<?php
+    ini_set('post_max_size', '1024M');
+    require_once('partials/header.php');
+?>
     <div class="content">
         <div class="dropdown">
             <select name="formshow" class="form-select" id="formshow">

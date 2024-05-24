@@ -15,7 +15,7 @@
         <div class="sidenav">
             <div class="card">
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item"><a href="/">Dashboard</a></li>
+                  <li class="list-group-item"><a href="index.php">Dashboard</a></li>
                   <li class="list-group-item"><a href="users.php">Users</a></li>
                   <li class="list-group-item"><a href="subscribers.php">Subscribers</a></li>
                   <li class="list-group-item"><a href="groups.php">Groups</a></li>

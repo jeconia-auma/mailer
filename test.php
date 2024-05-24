@@ -1,13 +1,7 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-<body>
-    <form action="test2.php" method="post" multipart="" enctype="multipart/form-data">
-        <input type="file" name="img[]" multiple="multiple" />
-        <input type="submit">
-    </form>
-</body>
-</html>
+<?php
+    ini_set('post_max_size', '1024M');
+    $attach = $_FILES['attachment']['name'];
+    foreach($attach as $t => $x){
+        echo "$attach[$t]";
+    }
+?>
