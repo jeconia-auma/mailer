@@ -42,15 +42,15 @@
                 <button type="submit" class="btn btn-primary" name="send">Send</button>
             </div>
         </form>
-        <form action="mailer.php" method="post" class="form form-hide" id='group'>
+        <form action="group_mailer.php" method="post" class="form form-hide" id='group' enctype="multipart/form-data">
             <div class="head">
                 <h3>Send Group Email</h3>
             </div>
             <div class="body">
-                <div class="input-group">
+                <!-- <div class="input-group">
                     <input type="email" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     <span class="input-group-text">Email</span>
-                </div>
+                </div> -->
                 
                 <br>
 
@@ -62,9 +62,14 @@
                 <br>
 
                 <div class="form-floating">
-                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" rows='7' required name='body'></textarea>
+                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextaread" rows='7' required name='body'></textarea>
                     <label for="floatingTextarea">Body</label>
                 </div>
+            </div>
+            <br>
+            <div>
+                <label for="formFileLg" class="form-label text-primary">Attach Your file here</label>
+                <input class="form-control form-control-lg" id="formFileLg" type="file" name="attachment[]" multiple>
             </div>
             <br>
             <div class="buttons">

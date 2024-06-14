@@ -7,20 +7,24 @@ use PHPMailer\PHPMailer\Exception;
 
 //require dependencies
 require_once('includes/db_conn.php');
+$sql = "select * from subscribers";
+$result = mysqli_query($conn, $sql);
 
 //Load Composer's autoloader
 require 'vendor/autoload.php';
 
 if(isset($_POST["send"])){
-    $email = $_POST['email'];
+    // $email = $_POST['email'];
     $subject = $_POST['subject'];
     $body = $_POST['body'];
-    $attachment = $_FILES['attachment']['name'];
+    // $attachment = array($_FILES['attachment']['name']);
 
-    // print_r($attachment);
-    // foreach($attachment as $attach){
-    //     print_r($attach); echo "<br>";
-    // }
+    if(isset($_FILES['attachment']['name'])){
+        $attachment = $_FILES['attachment']['name'];
+        print_r($attachment);
+    }else{
+        echo "no attachment set";
+    }
 }
 
 //Create an instance; passing `true` enables exceptions
@@ -38,16 +42,22 @@ try {
 
     //Recipients
     $mail->setFrom('info@kinyanjuitechnical.ac.ke', 'PC. Kinyanjui Technical Training Institute');
-    $mail->addAddress($email, 'Student');     //Add a recipient
+    while($email = mysqli_fetch_assoc($result)){
+        echo $email['email'];
+        $mail->addAddress($email['email'], 'Dear Student');    //Add a recipient
+    }
     // $mail->addAddress('ellen@example.com');               //Name is optional
     $mail->addReplyTo('info@kinyanjuitechnical.ac.ke', 'info');
     // $mail->addCC('cc@example.com');
     // $mail->addBCC('bcc@example.com');
 
     // Attachments
-    foreach ($attachment as $k=>$v) {
-        // $mail->addAttachment($attach);         //Add attachments
-        $mail->addAttachment($_FILES['attachment']['tmp_name'][$k], $_FILES['attachment']['name'][$k]);    //Optional name
+    if(isset($attachment)){
+        foreach ($attachment as $k=>$v) {
+            // $mail->addAttachment($attach);         //Add attachments
+            echo "attachment available";
+            $mail->addAttachment($_FILES['attachment']['tmp_name'][$k], $_FILES['attachment']['name'][$k]);    //Optional name
+        }
     }
     
 
